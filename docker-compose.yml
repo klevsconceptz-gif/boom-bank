@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  boom-bank:
+    build: .
+    container_name: boom-bank-production
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - AES_SECRET_KEY=boom_bank_hardware_master_key_2026_aes256gcm
+      - DB_TYPE=file
+    volumes:
+      - ./data:/app/data
+    restart: always

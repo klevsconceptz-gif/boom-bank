@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white min-h-screen;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+/* Custom Metallic Logo Gold Utilities sampled directly from Logo Emblem */
+.text-gold {
+  color: #daba76 !important;
+}
+
+.text-gold-light {
+  color: #e5cc93 !important;
+}
+
+.text-gold-dark {
+  color: #a38248 !important;
+}
+
+.text-gold-metallic {
+  background: linear-gradient(135deg, #e5cc93 0%, #daba76 40%, #c6a565 70%, #a38248 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #daba76 0%, #c6a565 50%, #a38248 100%) !important;
+  color: #0f172a !important;
+}
+
+.bg-gold-gradient:hover {
+  background: linear-gradient(135deg, #e5cc93 0%, #daba76 50%, #c6a565 100%) !important;
+}
+
+.border-gold {
+  border-color: #c6a565 !important;
+}
+
+.border-gold-light {
+  border-color: #daba76 !important;
+}

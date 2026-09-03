@@ -1,0 +1,7 @@
+# Boom Bank Robots.txt - Search Engine Crawlability Rules
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://boom-bank.pages.dev/sitemap.xml

@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+out/
+
+# Environment & Secrets
+.env
+.env.local
+.env.production
+*.pem
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-deployment.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip
+boom-bank-workspace.zip

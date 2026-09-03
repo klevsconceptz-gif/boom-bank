@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Boom Bank Commercial Treasury REST API",
+    "description": "Official US Digital Commercial Banking API featuring AES-256-GCM hardware encryption, PBKDF2 SHA-512 password hashing, instant 10-digit checking & savings account generation, ACH/SWIFT wires, and AI bank staff governance.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Boom Bank Developer Engineering",
+      "email": "engineering@boombank.com",
+      "url": "https://boom-bank.pages.dev"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://boom-bank.pages.dev/api",
+      "description": "Cloudflare Pages & Worker Edge Network"
+    },
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local Express Development Server"
+    }
+  ],
+  "paths": {
+    "/security/encryption-status": {
+      "get": {
+        "summary": "Check Hardware Security & Encryption Engine Telemetry",
+        "responses": {
+          "200": {
+            "description": "Returns FIPS 140-2 compliance metrics and AES-256-GCM cipher status."
+          }
+        }
+      }
+    },
+    "/crypto/encrypt": {
+      "post": {
+        "summary": "Encrypt Sensitive Payload with AES-256-GCM",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": { "type": "string", "example": "123-45-6789" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Returns encrypted payload string with IV and AuthTag." }
+        }
+      }
+    },
+    "/crypto/decrypt": {
+      "post": {
+        "summary": "Decrypt AES-256-GCM Encrypted Payload",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "encryptedText": { "type": "string", "example": "enc:aes256gcm:..." }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Returns decrypted plain text." }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Authenticate Customer or Admin Account",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string", "example": "klev1212" },
+                  "password": { "type": "string", "example": "Admin@boom" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Returns user account object, balances, and cards." }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "summary": "KYC Onboarding & Account Generation",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": { "type": "string" },
+                  "lastName": { "type": "string" },
+                  "email": { "type": "string" },
+                  "ssn": { "type": "string" },
+                  "password": { "type": "string" },
+                  "initialDeposit": { "type": "number", "default": 500.00 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Account created with ABA routing number 021000021 and 10-digit account numbers." }
+        }
+      }
+    },
+    "/ai/staff": {
+      "get": {
+        "summary": "Fetch AI Staff Officers Telemetry",
+        "responses": {
+          "200": { "description": "Returns roster of AI staff (Sentinel-AI, Lexis-AI, Apex-AI, Concierge-AI, Credit-AI)." }
+        }
+      }
+    }
+  }
+}

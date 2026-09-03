@@ -1,0 +1,12 @@
+name = "boom-bank"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "dist"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+BANK_NAME = "Boom Bank, N.A."
+ABA_ROUTING_NUMBER = "021000021"
+FDIC_INSURANCE_CHARTER = "FDIC-89402"
+SWIFT_BIC_CODE = "BOOMUS33XXX"
+AES_ENCRYPTION_STANDARD = "AES-256-GCM"
+ENVIRONMENT = "production"
